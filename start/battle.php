@@ -1,7 +1,8 @@
 <?php
-require __DIR__.'/functions.php';
+require __DIR__.'/bootstrap.php';
 
-$ships = get_ships();
+$shipLoader = new ShipLoader();
+$ships = $shipLoader->loadShips();
 
 $ship1Name = isset($_POST['ship1_name']) ? $_POST['ship1_name'] : null;
 $ship1Quantity = isset($_POST['ship1_quantity']) ? $_POST['ship1_quantity'] : 1;
@@ -26,7 +27,9 @@ if ($ship1Quantity <= 0 || $ship2Quantity <= 0) {
 $ship1 = $ships[$ship1Name];
 $ship2 = $ships[$ship2Name];
 
-$outcome = battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
+$battleManager = new BattleManager();
+$battleResult = $battleManager->battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
+
 ?>
 
 <html>
@@ -58,34 +61,34 @@ $outcome = battle($ship1, $ship1Quantity, $ship2, $ship2Quantity);
                 <h2 class="text-center">The Matchup:</h2>
                 <p class="text-center">
                     <br>
-                    <?php echo $ship1Quantity; ?> <?php echo $ship1['name']; ?><?php echo $ship1Quantity > 1 ? 's': ''; ?>
+                    <?php echo $ship1Quantity; ?> <?php echo $ship1->getName(); ?><?php echo $ship1Quantity > 1 ? 's': ''; ?>
                     VS.
-                    <?php echo $ship2Quantity; ?> <?php echo $ship2['name']; ?><?php echo $ship2Quantity > 1 ? 's': ''; ?>
+                    <?php echo $ship2Quantity; ?> <?php echo $ship2->getName(); ?><?php echo $ship2Quantity > 1 ? 's': ''; ?>
                 </p>
             </div>
             <div class="result-box center-block">
                 <h3 class="text-center audiowide">
                     Winner:
-                    <?php if ($outcome['winning_ship']): ?>
-                        <?php echo $outcome['winning_ship']['name']; ?>
+                    <?php if ($battleResult->getWinningShip()): ?>
+                        <?php echo $battleResult->getWinningShip()->getName(); ?>
                     <?php else: ?>
                         Nobody
                     <?php endif; ?>
                 </h3>
                 <p class="text-center">
-                    <?php if ($outcome['winning_ship'] == null): ?>
+                    <?php if ($battleResult->getWinningShip() == null): ?>
                         Both ships destroyed each other in an epic battle to the end.
                     <?php else: ?>
-                        The <?php echo $outcome['winning_ship']['name']; ?>
-                        <?php if ($outcome['used_jedi_powers']): ?>
+                        The <?php echo $battleResult->getWinningShip()->getName(); ?>
+                        <?php if ($battleResult->whereJediPowersUsed()): ?>
                             used its Jedi Powers for a stunning victory!
                         <?php else: ?>
-                            overpowered and destroyed the <?php echo $outcome['losing_ship']['name'] ?>s
+                            overpowered and destroyed the <?php echo $battleResult->getLosingShip()->getName() ?>s
                         <?php endif; ?>
                     <?php endif; ?>
                 </p>
             </div>
-            <a href="/index.php"><p class="text-center"><i class="fa fa-undo"></i> Battle again</p></a>
+            <a href="/start"><p class="text-center"><i class="fa fa-undo"></i> Battle again</p></a>
         
             <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

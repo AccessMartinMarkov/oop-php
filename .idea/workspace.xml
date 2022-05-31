@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3e1d4fb-17ce-4384-a4ae-725f42cb6a34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/start/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/start/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/bootstrap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/battle.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/battle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/functions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/play.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/play.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +27,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -38,16 +45,22 @@
       <workItem from="1653490977864" duration="1060000" />
       <workItem from="1653494908254" duration="285000" />
       <workItem from="1653495764975" duration="1328000" />
+      <workItem from="1653752440392" duration="21391000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="2712" y="306" key="NewPhpFileDialog" timestamp="1653477525678">
-      <screen x="1680" y="-261" width="2560" height="1490" />
-    </state>
-    <state x="2712" y="306" key="NewPhpFileDialog/1680.-261.2560.1490/0.25.1680.1025@1680.-261.2560.1490" timestamp="1653477525678" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

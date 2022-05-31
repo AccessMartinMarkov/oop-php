@@ -1,47 +1,34 @@
 <?php
 
-class Ship
-{
-  public $name;
+include_once __DIR__ . '/lib/Ship.php';
 
-  public $weaponPower = 0;
-
-  public $jediFactor = 0;
-
-  public $strength = 0;
-
-  public function getName()
-  {
-    return $this->name;
-  }
-
-  public function getNameAndSpecs($useShortFormat)
-  {
-    if ($useShortFormat) {
-      return sprintf(
-        '%s: %s/%s/%s',
-        $this->name,
-        $this->weaponPower,
-        $this->jediFactor,
-        $this->strength
-      );
-    }
-    else {
-      return sprintf(
-        '%s: w:%s, j:%s, s:%s',
-        $this->name,
-        $this->weaponPower,
-        $this->jediFactor,
-        $this->strength
-      );
-    }
-  }
+/**
+ * @param Ship $SomeShip
+ */
+function printShipSummary($SomeShip) {
+  echo $SomeShip->getName();
+  echo '<hr>';
+  echo $SomeShip->getNameAndSpecs(true);
+  echo '<hr>';
+  echo $SomeShip->getNameAndSpecs(false);
+  echo '<hr>';
 }
 
 $myShip = new Ship();
-$myShip->name = 'Jedi Starship';
+$myShip->setName('Jedi Starship');
+$myShip->setWeaponPower(10);
+$myShip->setJediFactor(15);
+$myShip->setStrength(20);
 
-echo $myShip->getNameAndSpecs(false);
-echo '<hr>';
-echo $myShip->getNameAndSpecs(true);
+$otherShip = new Ship();
+$otherShip->setName('Imperial Shuttle');
+$otherShip->setWeaponPower(15);
+$otherShip->setJediFactor(10);
+$otherShip->setStrength(15);
 
+if ($myShip->doesGivenShipHaveMoreStrength($otherShip)) 
+{
+  echo $otherShip->getName() . ' Has more strength.';
+} else {
+  echo $myShip->getName() . ' Has more strength.';
+}
