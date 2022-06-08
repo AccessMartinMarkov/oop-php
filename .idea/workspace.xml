@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3e1d4fb-17ce-4384-a4ae-725f42cb6a34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/start/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/lib/Service/ShipLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start/battle.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/battle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/functions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/play.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/play.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/lib/BattleManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/lib/Service/BattleManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/lib/BattleResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/lib/Model/BattleResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/lib/Ship.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/lib/Model/Ship.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/lib/ShipLoader.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +21,23 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="29eaCYRIEENDT5Pv7wq4ig293vE" />
   <component name="ProjectViewState">
@@ -26,11 +45,25 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/start/lib/Service" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/start/lib/Service" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/start/lib" />
+      <recent name="$PROJECT_DIR$/start" />
+      <recent name="$PROJECT_DIR$/start/lib/Service" />
+      <recent name="$PROJECT_DIR$/start/lib/Model" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

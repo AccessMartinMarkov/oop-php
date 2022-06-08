@@ -1,8 +1,15 @@
 <?php
 require __DIR__.'/bootstrap.php';
 
-$shipLoader = new ShipLoader();
+/**
+ * @var $db_configuration array
+ */
+$container = new Container($db_configuration);
+$shipLoader = $container->getShipLoader();
 $ships = $shipLoader->loadShips();
+
+$brokenShip = new BrokenShip('I am Broken');
+$ships[] = $brokenShip;
 
 $errorMessage = '';
 if (isset($_GET['error'])) {
@@ -62,6 +69,7 @@ if (isset($_GET['error'])) {
                         <th>Jedi Factor</th>
                         <th>Strength</th>
                         <th>Status</th>
+                        <th>Type</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -76,6 +84,7 @@ if (isset($_GET['error'])) {
                             <?php else: ?>
                               <td><i class="fa fa-cloud"></i> Not Ready</td>
                             <?php endif; ?>
+                            <td><?php echo $ship->getType(); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -86,11 +95,11 @@ if (isset($_GET['error'])) {
                     <form method="POST" action="/start/battle.php">
                         <h2 class="text-center">The Mission</h2>
                         <input class="center-block form-control text-field" type="text" name="ship1_quantity" placeholder="Enter Number of Ships" />
-                        <select class="center-block form-control btn drp-dwn-width btn-default btn-lg dropdown-toggle" name="ship1_name">
+                        <select class="center-block form-control btn drp-dwn-width btn-default btn-lg dropdown-toggle" name="ship1_id">
                             <option value="">Choose a Ship</option>
-                            <?php foreach ($ships as $key => $ship): ?>
+                            <?php foreach ($ships as $ship): ?>
                               <?php if ($ship->isReadyToFlight()): ?>
-                                <option value="<?php echo $key; ?>"><?php echo $ship->getNameAndSpecs(); ?></option>
+                                <option value="<?php echo $ship->getId(); ?>"><?php echo $ship->getNameAndSpecs(); ?></option>
                               <?php endif; ?>
                             <?php endforeach; ?>
                         </select>
@@ -98,11 +107,11 @@ if (isset($_GET['error'])) {
                         <p class="text-center">AGAINST</p>
                         <br>
                         <input class="center-block form-control text-field" type="text" name="ship2_quantity" placeholder="Enter Number of Ships" />
-                        <select class="center-block form-control btn drp-dwn-width btn-default btn-lg dropdown-toggle" name="ship2_name">
+                        <select class="center-block form-control btn drp-dwn-width btn-default btn-lg dropdown-toggle" name="ship2_id">
                             <option value="">Choose a Ship</option>
-                            <?php foreach ($ships as $key => $ship): ?>
+                            <?php foreach ($ships as $ship): ?>
                               <?php if ($ship->isReadyToFlight()): ?>
-                                <option value="<?php echo $key; ?>"><?php echo $ship->getNameAndSpecs(); ?></option>
+                                <option value="<?php echo $ship->getId(); ?>"><?php echo $ship->getNameAndSpecs(); ?></option>
                               <?php endif; ?>
                             <?php endforeach; ?>
                         </select>
