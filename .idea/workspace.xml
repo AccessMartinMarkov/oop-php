@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3e1d4fb-17ce-4384-a4ae-725f42cb6a34" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/start/lib/Service/ShipLoader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start/battle.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/battle.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/lib/BattleManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/lib/Service/BattleManager.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/lib/BattleResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/lib/Model/BattleResult.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/lib/Ship.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/lib/Model/Ship.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/lib/ShipLoader.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/lib/Service/BattleManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/start/lib/Service/BattleManager.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +73,8 @@
       <workItem from="1653494908254" duration="285000" />
       <workItem from="1653495764975" duration="1328000" />
       <workItem from="1653752440392" duration="21391000" />
+      <workItem from="1654699309430" duration="693000" />
+      <workItem from="1654700318861" duration="4803000" />
     </task>
     <servers />
   </component>
@@ -95,5 +91,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
