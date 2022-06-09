@@ -1,11 +1,6 @@
-## You've got the Code for Intro to OO. Yeehaw!
+Object Oriented Ship Battling, Ahem Programming
+===============================================
 
-Hi there! Inside this code download you'll find the following things:
+This repository holds the screencast code, script and blueprints for a
+secret rebel base for the Object Oriented Episode 1 course from KnpUniversity.
 
-* A `start/` directory: how the project looked at the *start* of the tutorial
-
-* A `finish/` directory: how the project looked after we did all the cool coding
-
-In each directory, you'll find more details about how to setup the project.
-But if you have any questions, just post a comment on the course page and
-ask!
