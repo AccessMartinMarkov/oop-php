@@ -14,6 +14,8 @@ class Container
 
   private $shipStorage;
 
+  private $ShipsWithoutBrokenShips;
+
   public function __construct(array $db_configuration)
   {
     $this->db_configuration = $db_configuration;
@@ -64,6 +66,18 @@ class Container
     }
 
     return $this->battleManager;
+  }
+
+  /**
+   * @return ShipsWithoutBrokenShips[]
+   */
+  public function getShipsWithoutBrokenShips() {
+    if ($this->ShipsWithoutBrokenShips === null) {
+      $allShips = $this->getShipLoader()->loadShips();
+      $this->ShipsWithoutBrokenShips = new ShipsWithoutBrokenShips($allShips);
+    }
+
+    return $this->ShipsWithoutBrokenShips->getNoBrokenShips();
   }
 
 }

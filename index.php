@@ -4,6 +4,8 @@ require __DIR__.'/bootstrap.php';
 use Service\BattleManager;
 use Service\Container;
 use Model\BrokenShip;
+use Model\Person;
+use Service\ShipsWithoutBrokenShips;
 
 /**
  * @var $db_configuration array
@@ -16,7 +18,15 @@ $brokenShip = new BrokenShip('I am Broken');
 
 $ships[] = $brokenShip;
 
+$noBrokenShips = $container->getShipsWithoutBrokenShips();
+
 $battleTypes = BattleManager::getAllBattleTypes();
+
+echo '<pre>';
+var_dump($noBrokenShips);
+echo '<pre>';
+
+$ships = $noBrokenShips;
 
 $errorMessage = '';
 if (isset($_GET['error'])) {
