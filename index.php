@@ -4,7 +4,7 @@ require __DIR__.'/bootstrap.php';
 use Service\BattleManager;
 use Service\Container;
 use Model\BrokenShip;
-use Model\Person;
+use Model\PersonTest;
 use Service\ShipsWithoutBrokenShips;
 
 /**
@@ -21,12 +21,6 @@ $ships[] = $brokenShip;
 $noBrokenShips = $container->getShipsWithoutBrokenShips();
 
 $battleTypes = BattleManager::getAllBattleTypes();
-
-echo '<pre>';
-var_dump($noBrokenShips);
-echo '<pre>';
-
-$ships = $noBrokenShips;
 
 $errorMessage = '';
 if (isset($_GET['error'])) {

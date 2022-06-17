@@ -4,9 +4,9 @@
 namespace Model;
 
 
-class Person
+class PersonTest
 {
-  public $name;
+  private $name;
 
   public $age;
 
