@@ -3,14 +3,14 @@
 
 namespace Model;
 
-
-class PersonTest
+// Showing how to turn Object to String and access it's private or protected properties.
+class PersonMagicMethodsEx
 {
   private $name;
 
-  public $age;
+  private $age;
 
-  public $sex;
+  private $sex;
 
   public function __construct($name, $age, $sex)
   {
