@@ -4,7 +4,7 @@
 namespace Model;
 
 // Showing how to turn Object to String and access it's private or protected properties.
-class PersonMagicMethodsEx
+class PersonToString
 {
   private $name;
 
