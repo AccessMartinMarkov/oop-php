@@ -5,7 +5,6 @@ use Service\BattleManager;
 use Service\Container;
 use Model\BrokenShip;
 use Model\PersonTest;
-use Service\ShipsWithoutBrokenShips;
 
 /**
  * @var $db_configuration array
