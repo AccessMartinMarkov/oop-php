@@ -17,7 +17,8 @@ $brokenShip = new BrokenShip('I am Broken');
 
 $ships[] = $brokenShip;
 
-$noBrokenShips = $container->getShipsWithoutBrokenShips();
+//$NoBrokenShips = $shipLoader->getNoBrokenShips();
+
 
 $battleTypes = BattleManager::getAllBattleTypes();
 
@@ -37,7 +38,57 @@ if (isset($_GET['error'])) {
             $errorMessage = 'There was a disturbance in the force. Try again.';
     }
 }
+
 ?>
+
+<?php
+class myData implements \ArrayAccess, \IteratorAggregate {
+
+  private $arr = [];
+
+  public function __construct() {
+    $this->arr[] = 'One';
+    $this->arr[] = 'Two';
+    $this->arr[] = 'Three';
+  }
+
+  public function offsetExists($offset)
+  {
+    return array_key_exists($offset, $this->arr);
+  }
+
+  public function offsetGet($offset)
+  {
+    return $this->arr[$offset];
+  }
+
+  public function offsetSet($offset, $value)
+  {
+    $this->arr[$offset] = $value;
+  }
+
+  public function offsetUnset($offset)
+  {
+    unset($this->arr[$offset]);
+  }
+
+  public function getIterator() {
+    return new ArrayIterator($this);
+  }
+
+  public function getAllKeyValues() {
+    return $this->arr;
+  }
+}
+
+$obj = new myData;
+$data = $obj->getAllKeyValues();
+foreach($data as $key => $value) {
+  var_dump($key, $value);
+  echo "<br>";
+}
+?>
+
 
 <html>
     <head>

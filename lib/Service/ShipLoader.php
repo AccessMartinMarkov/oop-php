@@ -10,6 +10,8 @@ class ShipLoader
 {
   private $shipStorage;
 
+  private $ships = [];
+
   public function __construct(ShipStorageInterface $shipStorage)
   {
     $this->shipStorage = $shipStorage;
@@ -20,7 +22,6 @@ class ShipLoader
    */
   public function loadShips()
   {
-    $ships = [];
 
     try {
       $shipsData = $this->shipStorage->fetchAllShipsData();
@@ -30,10 +31,22 @@ class ShipLoader
     }
 
     foreach ($shipsData as $shipData) {
-      $ships[] = $this->createShipFromData($shipData);
+      $this->ships[] = $this->createShipFromData($shipData);
     }
 
-    return $ships;
+    return $this->ships;
+  }
+
+  public function getNoBrokenShips()
+  {
+    $noBrokenShips = [];
+    $sps = $this->loadShips();
+    foreach($sps as $s) {
+      if ($s->isReadyToFlight()) {
+        $noBrokenShips[] = $s;
+      }
+    }
+    return $noBrokenShips;
   }
 
   private function createShipFromData(array $shipData)
