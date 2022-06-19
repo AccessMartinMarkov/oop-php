@@ -48,7 +48,7 @@ class BattleResult implements \ArrayAccess
   }
 
   // Treat your objects like an array
-  public function offsetExists($offset)
+  public function offsetExists($offset): bool
   {
     return property_exists($this, $offset);
   }

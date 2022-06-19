@@ -37,18 +37,6 @@ class ShipLoader
     return $this->ships;
   }
 
-  public function getNoBrokenShips()
-  {
-    $noBrokenShips = [];
-    $sps = $this->loadShips();
-    foreach($sps as $s) {
-      if ($s->isReadyToFlight()) {
-        $noBrokenShips[] = $s;
-      }
-    }
-    return $noBrokenShips;
-  }
-
   private function createShipFromData(array $shipData)
   {
     if ($shipData['team'] === 'rebel') {
@@ -69,7 +57,8 @@ class ShipLoader
    * @param $id
    * @return AbstractShip|null
    */
-  public function findOneById($id) {
+  public function findOneById($id)
+  {
 
     $shipArray = $this->shipStorage->fetchSingleShipsData($id);
 
