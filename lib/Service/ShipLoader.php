@@ -2,9 +2,11 @@
 
 namespace Service;
 
+use Model\BountyHunterShip;
 use Model\RebelShip;
 use Model\Ship;
 use Model\AbstractShip;
+use Model\ShipsCollection;
 
 class ShipLoader
 {
@@ -18,7 +20,7 @@ class ShipLoader
   }
 
   /**
-   * @return AbstractShip[]
+   * @return ShipsCollection
    */
   public function loadShips()
   {
@@ -34,7 +36,10 @@ class ShipLoader
       $this->ships[] = $this->createShipFromData($shipData);
     }
 
-    return $this->ships;
+    // Boba Fett's ship
+    $this->ships[] = new BountyHunterShip('Slave 1');
+
+    return new ShipsCollection($this->ships);
   }
 
   private function createShipFromData(array $shipData)

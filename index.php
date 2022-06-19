@@ -16,6 +16,8 @@ $brokenShip = new BrokenShip('I am Broken');
 
 $ships[] = $brokenShip;
 
+$ships->removeAllBrokenShips();
+
 $battleTypes = BattleManager::getAllBattleTypes();
 
 $errorMessage = '';
